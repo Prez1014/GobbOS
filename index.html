@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GobbOS</title>
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main id="desktop" aria-label="Retro desktop">
+
+        <!-- Desktop Icons -->
+        <div class="desktop-icon" data-window="bio" tabindex="0">
+            <span class="icon-img">ℹ</span>
+            <span class="icon-label">bio.txt</span>
+        </div>
+
+        <div class="desktop-icon" data-window="music" tabindex="0">
+            <span class="icon-img">🎵</span>
+            <span class="icon-label">player.exe</span>
+        </div>
+
+        <div class="desktop-icon" data-window="guestbook" tabindex="0">
+            <span class="icon-img">📖</span>
+            <span class="icon-label">guestbook.html</span>
+        </div>
+
+        <div class="desktop-icon" data-window="notepad" tabindex="0">
+            <span class="icon-img">📝</span>
+            <span class="icon-label">notes.txt</span>
+        </div>
+
+        <!-- Bio Window -->
+        <section class="window" id="window-bio">
+            <div class="resize-handle"></div>
+            <header class="window-header">
+                <span class="window-title">ℹ bio.txt</span>
+                <div class="window-controls">
+                    <button class="win-btn min-btn" aria-label="Minimize">_</button>
+                    <button class="win-btn max-btn" aria-label="Maximize">□</button>
+                    <button class="win-btn close-btn" aria-label="Close">×</button>
+                </div>
+            </header>
+
+            <div class="window-body">
+                <div class="bio-icon">
+                    <img src="img/icon.png" alt="me :D">
+                </div>
+
+                <h3>Who am i?</h3>
+                <p>
+                    I'm your Online Friendly Goblin. I like potatoes and bananas.
+                    I swear i saw a rat here, i'm not crazy am i? <br>
+                    Crazy? I was crazy once, they locked me in a room, a rubber room, a rubber room with rats and rats make me crazy.. Crazy? I was crazy once, they locked me in a room, a rubber room, a rubber room with bats and bats make me crazy..
+                    Crazy? I was crazy once, they locked me in a room, a rubber room, a rubber room with pat and pat makes me ANGRY! Crazy? I was crazy once, they locked me in a room, a rubber room, a rubber room with hats and hats make me crazy..
+                </p>
+
+                <hr>
+
+                <ul>
+                    <li>✦ Status: Online &amp; Jorking</li>
+                    <li>✦ Location: Cyberspace</li>
+                    <li>✦ Interests: Retro UI, Lo-Fi, Indie Dev</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Music Player Window -->
+        <section class="window" id="window-music">
+            <div class="resize-handle"></div>
+            <header class="window-header">
+                <span class="window-title">🎵 player.exe</span>
+                <div class="window-controls">
+                    <button class="win-btn min-btn" aria-label="Minimize">_</button>
+                    <button class="win-btn max-btn" aria-label="Maximize">□</button>
+                    <button class="win-btn close-btn" aria-label="Close">×</button>
+                </div>
+            </header>
+
+            <div class="window-body">
+                <div class="player-display">
+                    <div class="album-art" id="album-art">🎧</div>
+                    <div class="track-info">
+                        <p class="track-title" id="track-title">Select a track</p>
+                        <p class="track-artist" id="track-artist">GobbOS Media Player</p>
+                    </div>
+                </div>
+
+                <!-- Playlist / Folder Selection -->
+                <div class="folder-select-row">
+                    <label for="theme-selector" class="retro-label">Category:</label>
+                    <select id="theme-selector" class="retro-select">
+                        <option value="lofi">☕ Lo-Fi (Deltarune & Chill)</option>
+                        <option value="gym">🏋️ Ultramasculine Gym</option>
+                    </select>
+                </div>
+
+                <!-- Tracklist View -->
+                <div class="playlist-container">
+                    <ul id="playlist-items" class="playlist-list">
+                        <!-- Track items injected dynamically by JS -->
+                    </ul>
+                </div>
+
+                <audio id="audio-element" preload="metadata"></audio>
+
+                <div class="progress-container">
+                    <input
+                        id="progress"
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="0"
+                        aria-label="Track progress"
+                    >
+                </div>
+
+                <div class="time-row">
+                    <span id="current-time">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+
+                <div class="player-controls">
+                    <button class="retro-btn" id="previous-video">⏮</button>
+                    <button class="retro-btn" id="play-pause">▶</button>
+                    <button class="retro-btn" id="stop-track">⏹</button>
+                    <button class="retro-btn" id="next-video">⏭</button>
+                </div>
+
+                <p id="player-status" class="status-text">
+                    Ready to play local tracks.
+                </p>
+            </div>
+        </section>
+
+        <!-- Guestbook Window -->
+        <section class="window" id="window-guestbook">
+            <div class="resize-handle"></div>
+            <header class="window-header">
+                <span class="window-title">📖 guestbook.html</span>
+                <div class="window-controls">
+                    <button class="win-btn min-btn" aria-label="Minimize">_</button>
+                    <button class="win-btn max-btn" aria-label="Maximize">□</button>
+                    <button class="win-btn close-btn" aria-label="Close">×</button>
+                </div>
+            </header>
+
+            <div class="window-body">
+                <p>Leave a trace before you leave the site!</p>
+
+                <div class="guestbook-entries" id="guestbook-entries">
+                    <div class="entry">
+                        <strong>Name:</strong>
+                        Lerem Ipsum
+                    </div>
+                </div>
+
+                <form class="guestbook-form" id="guestbook-form">
+                    <input
+                        type="text"
+                        id="guest-name"
+                        class="retro-input"
+                        placeholder="Your name..."
+                        maxlength="40"
+                        required
+                    >
+
+                    <textarea
+                        id="guest-message"
+                        class="retro-textarea"
+                        placeholder="Your message..."
+                        maxlength="300"
+                        required
+                    ></textarea>
+
+                    <button class="retro-btn" type="submit">
+                        Sign Guestbook
+                    </button>
+                </form>
+
+                <p class="status-text">
+                    Entries are temporary and are not saved to a server.
+                </p>
+            </div>
+        </section>
+
+        <!-- Notepad Window -->
+        <section class="window" id="window-notepad">
+            <div class="resize-handle"></div>
+            <header class="window-header">
+                <span class="window-title">📝 notes.txt</span>
+                <div class="window-controls">
+                    <button class="win-btn min-btn" aria-label="Minimize">_</button>
+                    <button class="win-btn max-btn" aria-label="Maximize">□</button>
+                    <button class="win-btn close-btn" aria-label="Close">×</button>
+                </div>
+            </header>
+
+            <div class="window-body notepad-body">
+                <textarea class="notepad-textarea" spellcheck="false">
+Things to do: 
+1. Finish retro portfolio website
+2. Listen to more ambient music
+3. Drink water
+                </textarea>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Taskbar -->
+    <footer id="taskbar">
+        <button id="start-btn">
+            <span class="start-icon">🪟</span>
+            Start
+        </button>
+
+        <div id="taskbar-tasks"></div>
+
+        <div id="clock">00:00</div>
+    </footer>
+
+    <!-- Start Menu -->
+    <aside id="start-menu" class="hidden">
+        <div class="start-menu-header">RetroOS v1.0</div>
+
+        <ul class="start-menu-list">
+            <li data-window="bio">📁 Bio</li>
+            <li data-window="music">🎵 Music Player</li>
+            <li data-window="guestbook">📖 Guestbook</li>
+            <li data-window="notepad">📝 Notepad</li>
+            <hr>
+            <li id="shutdown-btn">🔌 Shut Down</li>
+        </ul>
+    </aside>
+
+    <!-- Shutdown Screen -->
+    <div id="shutdown-screen" class="hidden">
+        <div>
+            <p>RetroOS has shut down.</p>
+            <button id="restart-btn" class="retro-btn">Restart</button>
+        </div>
+    </div>
+
+</body>
+</html>
