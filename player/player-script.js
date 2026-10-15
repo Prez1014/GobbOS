@@ -13,6 +13,14 @@ function initPlayer() {
     const albumArtEl = document.getElementById("album-art");
     const themeSelect = document.getElementById("theme-selector");
     const playlistContainer = document.getElementById("playlist-items");
+    const volumeSlider = document.getElementById("volume-slider");
+
+
+    volumeSlider.addEventListener("input", () => {
+        audio.volume = volumeSlider.value;
+    });
+
+    
 
     let currentCategory = "lofi";
     let currentTrackIndex = 0;

@@ -53,11 +53,19 @@
             <span id="duration">0:00</span>
         </div>
 
-        <div class="player-controls">
-            <button class="retro-btn" id="previous-video">⏮</button>
-            <button class="retro-btn" id="play-pause">▶</button>
-            <button class="retro-btn" id="stop-track">⏹</button>
-            <button class="retro-btn" id="next-video">⏭</button>
+        <!-- Volume & Player Controls Row -->
+        <div class="bottom-control-row">
+            <div class="volume-container">
+                <span style="font-size: 12px;">🔊</span>
+                <input id="volume-slider" type="range" min="0" max="1" step="0.05" value="1" aria-label="Volume">
+            </div>
+
+            <div class="player-controls">
+                <button class="retro-btn" id="previous-video">⏮</button>
+                <button class="retro-btn" id="play-pause">▶</button>
+                <button class="retro-btn" id="stop-track">⏹</button>
+                <button class="retro-btn" id="next-video">⏭</button>
+            </div>
         </div>
 
         <p id="player-status" class="status-text" style="margin:0;">

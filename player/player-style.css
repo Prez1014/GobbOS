@@ -191,3 +191,54 @@ button {
     border-color: var(--darker) var(--white) var(--white) var(--darker);
 }
 
+.bottom-control-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px 0;
+}
+
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Retro 90s Volume Slider Styling */
+#volume-slider {
+    -webkit-appearance: none; /* Removes default browser styling */
+    appearance: none;
+    width: 80px;
+    height: 14px;
+    background: var(--light, #dfdfdf);
+    border: 1px inset var(--darker, #404040);
+    outline: none;
+    padding: 1px;
+}
+
+/* The draggable slider thumb (retro gray block style) */
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 16px;
+    background: var(--gray, #c0c0c0);
+    border: 2px solid;
+    border-color: var(--white, #ffffff) var(--darker, #404040) var(--darker, #404040) var(--white, #ffffff);
+    cursor: pointer;
+    box-shadow: 1px 1px 0px #000;
+}
+
+#volume-slider::-webkit-slider-thumb:active {
+    border-color: var(--darker, #404040) var(--white, #ffffff) var(--white, #ffffff) var(--darker, #404040);
+}
+
+/* Firefox compatibility */
+#volume-slider::-moz-range-thumb {
+    width: 10px;
+    height: 16px;
+    background: var(--gray, #c0c0c0);
+    border: 2px solid;
+    border-color: var(--white, #ffffff) var(--darker, #404040) var(--darker, #404040) var(--white, #ffffff);
+    cursor: pointer;
+}
