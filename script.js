@@ -136,6 +136,10 @@ function closeWindow(win) {
         }
     }
 
+    if (id === "minesweeper") {
+        
+    }
+
     win.classList.remove("active", "maximized");
     minimizedWindows.delete(id);
 

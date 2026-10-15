@@ -107,7 +107,7 @@
                 <!-- Tracklist View -->
                 <div class="playlist-container">
                     <ul id="playlist-items" class="playlist-list">
-                        <!-- Track items injected dynamically by JS -->
+                        <!-- Track items injected by js-->
                     </ul>
                 </div>
 
@@ -137,7 +137,7 @@
                 </div>
 
                 <p id="player-status" class="status-text">
-                    Ready to play local tracks.
+                    Ready to play local tracks. sowwy ...
                 </p>
             </div>
         </section>
@@ -160,7 +160,7 @@
                 <div class="guestbook-entries" id="guestbook-entries">
                     <div class="entry">
                         <strong>Name:</strong>
-                        Lerem Ipsum
+                        Lorem Ipsum
                     </div>
                 </div>
 
@@ -193,8 +193,7 @@
             </div>
         </section>
 
-        <!-- Notepad Window -->
-        <section class="window" id="window-notepad">
+        <section class="window" id="window-notepad" style="width: 400px; height: 320px;">
             <div class="resize-handle"></div>
             <header class="window-header">
                 <span class="window-title">📝 notes.txt</span>
@@ -205,19 +204,13 @@
                 </div>
             </header>
 
-            <div class="window-body notepad-body">
-                <textarea class="notepad-textarea" spellcheck="false">
-Things to do: 
-1. Finish website
-2. Listen to more ambient music
-3. Drink water
-4. upgrade the minesweeper
-                </textarea>
+            <div class="window-body" style="padding: 0; overflow: hidden; height: calc(100% - 28px);">
+                <iframe src="notepad/notepad.html" style="width: 100%; height: 100%; border: none;"></iframe>
             </div>
         </section>
 
         <!-- Minesweeper Window -->
-        <section class="window" id="window-minesweeper" style="width: 400px; height: 420px;">
+        <section class="window" id="window-minesweeper" style="width: 400px; height: 520px;">
             <div class="resize-handle"></div>
             <header class="window-header">
                 <span class="window-title">💣 minesweeper.exe</span>
