@@ -1,0 +1,193 @@
+/* Inherit your main OS variables or provide fallbacks */
+:root {
+    --gray: #c0c0c0;
+    --light: #dfdfdf;
+    --white: #ffffff;
+    --dark: #808080;
+    --darker: #404040;
+    --blue: #000080;
+    --blue-light: #1084d0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--light);
+    font-family: 'Share Tech Mono', monospace, sans-serif;
+    color: #000;
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
+
+button {
+    color: #000;
+    cursor: pointer;
+}
+
+.window-body {
+    padding: 12px;
+    background: var(--light);
+    color: #000;
+    font-size: 14px;
+    overflow: auto;
+    min-height: 0;
+    border: 1px solid var(--dark);
+    margin: 4px;
+}
+
+.player-body {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 8px);
+    margin: 4px;
+}
+
+.player-display {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background: #fff;
+    border: 1px inset var(--darker);
+    padding: 6px;
+    margin-bottom: 8px;
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.track-title {
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-artist,
+.status-text {
+    font-size: 11px;
+    color: #555;
+}
+
+.status-text {
+    margin-top: 6px;
+}
+
+.folder-select-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.retro-label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.retro-select {
+    flex: 1;
+    background: #fff;
+    border: 1px inset var(--darker);
+    padding: 3px;
+    font-size: 12px;
+}
+
+.playlist-container {
+    background: #fff;
+    border: 1px inset var(--darker);
+    flex: 1;
+    min-height: 120px;
+    overflow-y: auto;
+    margin-bottom: 8px;
+}
+
+.playlist-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.playlist-list li {
+    padding: 4px 6px;
+    font-size: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.playlist-list li:hover {
+    background: #e0e0e0;
+}
+
+.playlist-list li.playing {
+    background: var(--blue);
+    color: #fff;
+    font-weight: bold;
+}
+
+.album-art {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    background: #000;
+    color: #0ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border: 1px inset var(--darker);
+}
+
+.progress-container {
+    background: #fff;
+    height: 12px;
+    border: 1px inset var(--darker);
+    margin: 8px 0 2px;
+}
+
+.progress-container input {
+    width: 100%;
+    height: 100%;
+    display: block;
+    accent-color: var(--blue);
+}
+
+.time-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 8px 0 4px 0;
+}
+
+.retro-btn {
+    background: var(--gray);
+    border: 2px solid;
+    border-color: var(--white) var(--darker) var(--darker) var(--white);
+    padding: 4px 12px;
+    font-size: 13px;
+}
+
+.retro-btn:active {
+    border-color: var(--darker) var(--white) var(--white) var(--darker);
+}
+

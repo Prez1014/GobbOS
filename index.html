@@ -75,7 +75,7 @@
         </section>
 
         <!-- Music Player Window -->
-        <section class="window" id="window-music">
+        <section class="window" id="window-music" style="width: 400px; height: 520px;">
             <div class="resize-handle"></div>
             <header class="window-header">
                 <span class="window-title">🎵 player.exe</span>
@@ -86,59 +86,8 @@
                 </div>
             </header>
 
-            <div class="window-body">
-                <div class="player-display">
-                    <div class="album-art" id="album-art">🎧</div>
-                    <div class="track-info">
-                        <p class="track-title" id="track-title">Select a track</p>
-                        <p class="track-artist" id="track-artist">GobbOS Media Player</p>
-                    </div>
-                </div>
-
-                <!-- Playlist / Folder Selection -->
-                <div class="folder-select-row">
-                    <label for="theme-selector" class="retro-label">Category:</label>
-                    <select id="theme-selector" class="retro-select">
-                        <option value="lofi">☕ Lo-Fi (Deltarune & Chill)</option>
-                        <option value="gym">🏋️ White girl pop</option>
-                    </select>
-                </div>
-
-                <!-- Tracklist View -->
-                <div class="playlist-container">
-                    <ul id="playlist-items" class="playlist-list">
-                        <!-- Track items injected by js-->
-                    </ul>
-                </div>
-
-                <audio id="audio-element" preload="metadata"></audio>
-
-                <div class="progress-container">
-                    <input
-                        id="progress"
-                        type="range"
-                        min="0"
-                        max="100"
-                        value="0"
-                        aria-label="Track progress"
-                    >
-                </div>
-
-                <div class="time-row">
-                    <span id="current-time">0:00</span>
-                    <span id="duration">0:00</span>
-                </div>
-
-                <div class="player-controls">
-                    <button class="retro-btn" id="previous-video">⏮</button>
-                    <button class="retro-btn" id="play-pause">▶</button>
-                    <button class="retro-btn" id="stop-track">⏹</button>
-                    <button class="retro-btn" id="next-video">⏭</button>
-                </div>
-
-                <p id="player-status" class="status-text">
-                    Ready to play local tracks. sowwy ...
-                </p>
+            <div class="window-body" style="padding: 0; overflow: hidden; background: #f0f2f5; height: calc(100% - 28px);">
+                <iframe src="player/player.html" style="width: 100%; height: 100%; border: none;"></iframe>
             </div>
         </section>
 

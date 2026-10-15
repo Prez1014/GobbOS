@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GobbOS Media Player</title>
+    <link rel="stylesheet" href="player-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <script src="player-script.js" defer></script>
+</head>
+
+<body>
+    <div class="player-body window-body" style="margin:0; height:100%; box-sizing:border-box;">
+        <div class="player-display">
+            <div class="album-art" id="album-art">🎧</div>
+            <div class="track-info">
+                <p class="track-title" id="track-title">Select a track</p>
+                <p class="track-artist" id="track-artist">GobbOS Media Player</p>
+            </div>
+        </div>
+
+        <!-- Playlist / Folder Selection -->
+        <div class="folder-select-row">
+            <label for="theme-selector" class="retro-label">Category:</label>
+            <select id="theme-selector" class="retro-select">
+                <option value="lofi">☕ Lo-Fi (Deltarune & Chill)</option>
+                <option value="gym">🏋️ White girl pop</option>
+            </select>
+        </div>
+
+        <!-- Tracklist View -->
+        <div class="playlist-container" style="flex: 1;">
+            <ul id="playlist-items" class="playlist-list">
+                <!-- Track items injected dynamically by JS -->
+            </ul>
+        </div>
+
+        <audio id="audio-element" preload="metadata"></audio>
+
+        <div class="progress-container">
+            <input
+                id="progress"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                aria-label="Track progress"
+            >
+        </div>
+
+        <div class="time-row">
+            <span id="current-time">0:00</span>
+            <span id="duration">0:00</span>
+        </div>
+
+        <div class="player-controls">
+            <button class="retro-btn" id="previous-video">⏮</button>
+            <button class="retro-btn" id="play-pause">▶</button>
+            <button class="retro-btn" id="stop-track">⏹</button>
+            <button class="retro-btn" id="next-video">⏭</button>
+        </div>
+
+        <p id="player-status" class="status-text" style="margin:0;">
+            Ready to play local tracks.
+        </p>
+    </div>
+
+    <script src="player-script.js"></script>
+    <script>
+        // Trigger initialization when the iframe loads
+        initPlayer();
+    </script>
+</body>
+</html>
