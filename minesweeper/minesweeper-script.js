@@ -2,6 +2,7 @@ const BOARD_SIZE = 9;
 const boardElement = document.getElementById("board");
 let boardData = [];
 const TOTAL_MINES = 10;
+const boom = new Audio('../sfx/vine-boom.mp3');
 
 function createBoard() {
     for (let row = 0; row < BOARD_SIZE; row++) {
@@ -102,7 +103,8 @@ function revealCell(row, col) {
     cellElement.classList.add("revealed");
 
     if (cell.isMine) {
-        cellElement.textContent = "💣";
+        boom.play();
+        cellElement.textContent = "🖕";
         cellElement.style.backgroundColor = "#ffcccc";
         // alert("Game Over! You hit a mine.");
     } else if (cell.neighborMines > 0) {
@@ -143,6 +145,22 @@ function toggleFlag(row, col) {
         }
     }
 }
+
+const resetBtn = document.getElementById("reset-btn");
+function resetGame() {
+    // 1. Clear the visual board elements from the HTML container
+    boardElement.innerHTML = "";
+
+    // 2. Clear the data array completely
+    boardData = [];
+
+    // 3. Re-run your full setup sequence
+    createBoard();
+    plantMines();
+    calculateNeighborMines();
+    setupEventListeners();
+}
+resetBtn.addEventListener("click", resetGame);
 
 // Initialization sequence
 createBoard();
