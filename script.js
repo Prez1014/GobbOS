@@ -19,7 +19,9 @@ function initClock() {
     function updateClock() {
         clock.textContent = new Date().toLocaleTimeString([], {
             hour: "2-digit",
-            minute: "2-digit"
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: false
         });
     }
 
@@ -676,6 +678,7 @@ function spawnRat() {
     // Replace with your actual rat PNG path (or use an emoji '🐀' as textContent if you don't have the PNG ready yet)
     rat.src = "img/rat.gif"; 
     rat.className = "running-rat";
+    rat.style.width = "200px";
     
     // Fallback just in case the PNG isn't added yet
     rat.onerror = () => {
@@ -700,7 +703,7 @@ function spawnRat() {
 function THEREITIS() {
     const rat = document.createElement("div");
     rat.className = "running-rat";
-    rat.style.fontSize = "40px";
+    rat.style.fontSize = "100px";
     rat.textContent = "🐀";
     document.body.appendChild(rat);
 

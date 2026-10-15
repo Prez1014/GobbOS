@@ -34,6 +34,11 @@
             <span class="icon-label">notes.txt</span>
         </div>
 
+        <div class="desktop-icon" data-window="minesweeper" tabindex="0">
+            <span class="icon-img">💣</span>
+            <span class="icon-label">minesweeper.exe</span>
+        </div>
+
         <!-- Bio Window -->
         <section class="window" id="window-bio">
             <div class="resize-handle"></div>
@@ -95,7 +100,7 @@
                     <label for="theme-selector" class="retro-label">Category:</label>
                     <select id="theme-selector" class="retro-select">
                         <option value="lofi">☕ Lo-Fi (Deltarune & Chill)</option>
-                        <option value="gym">🏋️ Ultramasculine Gym</option>
+                        <option value="gym">🏋️ White girl pop</option>
                     </select>
                 </div>
 
@@ -183,7 +188,7 @@
                 </form>
 
                 <p class="status-text">
-                    Entries are temporary and are not saved to a server.
+                    Entries are temporary and are not saved to a server. (FOR NOW 😈) 
                 </p>
             </div>
         </section>
@@ -203,10 +208,28 @@
             <div class="window-body notepad-body">
                 <textarea class="notepad-textarea" spellcheck="false">
 Things to do: 
-1. Finish retro portfolio website
+1. Finish website
 2. Listen to more ambient music
 3. Drink water
+4. upgrade the minesweeper
                 </textarea>
+            </div>
+        </section>
+
+        <!-- Minesweeper Window -->
+        <section class="window" id="window-minesweeper" style="width: 400px; height: 420px;">
+            <div class="resize-handle"></div>
+            <header class="window-header">
+                <span class="window-title">💣 minesweeper.exe</span>
+                <div class="window-controls">
+                    <button class="win-btn min-btn" aria-label="Minimize">_</button>
+                    <button class="win-btn max-btn" aria-label="Maximize">□</button>
+                    <button class="win-btn close-btn" aria-label="Close">×</button>
+                </div>
+            </header>
+
+            <div class="window-body" style="padding: 0; overflow: hidden; background: #f0f2f5; height: calc(100% - 28px);">
+                <iframe src="minesweeper/minesweeper.html" style="width: 100%; height: 100%; border: none;"></iframe>
             </div>
         </section>
 
@@ -226,7 +249,7 @@ Things to do:
 
     <!-- Start Menu -->
     <aside id="start-menu" class="hidden">
-        <div class="start-menu-header">RetroOS v1.0</div>
+        <div class="start-menu-header">GobbOS v0.5</div>
 
         <ul class="start-menu-list">
             <li data-window="bio">📁 Bio</li>
@@ -241,7 +264,7 @@ Things to do:
     <!-- Shutdown Screen -->
     <div id="shutdown-screen" class="hidden">
         <div>
-            <p>RetroOS has shut down.</p>
+            <p>GobbOS has shut down. BTW try writing "rat"</p>
             <button id="restart-btn" class="retro-btn">Restart</button>
         </div>
     </div>
